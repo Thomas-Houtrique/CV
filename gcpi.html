@@ -35,7 +35,7 @@
                     <a class="nav-link" href="entreprise.html">Entreprise</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Situations professionnelles entreprise
                     </a>
@@ -54,7 +54,7 @@
                         <a class="dropdown-item" href="glpi.html">GLPI</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown active">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Veille
@@ -71,15 +71,31 @@
     </nav>
     <div class="container">
         <article>
-            <img src="images/undraw_connected_world_wuay.svg" alt="" class="undraw">
-            <h1>Les enjeux de sécurité de la 5G</h1>
+            <img src="images/undraw_static_assets_rpm6.svg" alt="" class="undraw">
+            <h1>GCPI (Gestionnaire Centralisé de Parc Informatique)</h1>
             <p>Temps de lecture : <span class="eta"></span></p>
-            <p>La 5G est la cinquième génération des standards pour la téléphonie mobile, elle succède à la quatrième génération, appelée 4G, et prolonge l'exploitation technologique LTE.</p>
-            <h3>Des failles de sécurité qui suivent le protocole</h3>
-            <p>Pour le moment, la 5G, n’est pas encore au point d’un point de vue de la sécurité. Il y a encore environ 11 failles majeures. La 5G hérite de la plupart des problèmes de sécurité de la 4G ainsi que de la 3G.</p>
-            <p>La téléphonie 3G/4G comme l’Internet des objets (IoT) représentent 35 milliards d’équipements qui se connecte sur Internet, et constituent autant de cibles si ces objets ne sont pas correctement sécurisés. Intégrant les infrastructures critiques de la société numérique, la sécurité des réseaux 5G est donc un enjeu important. Pour Elsa Kania, analyste du Technology and National Security Program, la 5G « menace la sécurité publique et les industries critiques dans les futures villes intelligentes. (...) La course à la 5G est problématique, car la vitesse ne doit pas se faire au détriment de la sécurité.</p>
-            <h3>Sécurité 5G améliorée</h3>
-            <p>Son développement a bien évidemment apporté des améliorations majeures en matière de sécurité. Pour Ravishankar Borgaonkar, chercheur au sein de l’analyste norvégien SINTEF Digital, « La 5 G est très prometteuse pour la sécurité ». Il cite en particulier le cryptage des identifiants et le découpage du réseau – la segmentation du système en de nombreux réseaux virtuels personnalisés et gérés séparément – qui est un changement de paradigme du réseau. Ce dernier n’est plus considéré techniquement comme un réseau GSM, mais aussi comme un réseau "cloud". Ce qui implique de s’interroger sur la fiabilité garantie non plus des équipements matériels, mais également du logiciel. En particulier, la 5 G ouvre de nouvelles perspectives en matière de suivi des utilisateurs connectés, mais celles-ci s’accompagnent de l’usage d’informations non chiffrées dans les transmissions. </p>
+            <h3>Contexte</h3>
+            <p>Au sein de l'Osu les machines sont réparties sur différents réseaux en fonction des sites et sur différents vlan. Afin de piloter cette répartition nous avons un serveur DHCP par site ainsi qu'un serveur RADIUS sur chaque site. L'utilité du serveur RADIUS et de pouvoir attribué des vlan en fonction de l'adresse Mac de la machine de façon dynamique, contrairement à un tag sur la prise.</p>
+            <h3>2015</h3>
+            <p>Dans l'objectif d'apporter une interface graphique un premier site a était développer en 2015 permettant à chaque technicien de pouvoir déclarer des machines et des adresses Mac dans une base de données créant automatiquement les fichiers de configuration RADIUS et DHCP.</p>
+            <img src="./images/gcpibefore.png" class="img-fluid rounded w-75 mb-2" alt="gcpibefore">
+            <h3>2020</h3>
+            <p>Au début de mon apprentissage ce processus de remplissage de "fiche gcpi" pouvait être fastidieux et prendre du temps : chercher le numéro de série, les adresses mac et remplir correctement la fiche sans faire d'erreur pour chaque nouveau pc. J'avais donc en tête d'améliorer ce système et de le rendre automatique.</p>
+            <h3>Juin 2021</h3>
+            <p>A partir de juin 2021 j'ai commencé à comprendre le projet dans son ensemble (stack PHP/Javascript/MariaDB) et à réfléchir à une façon d'automatiser le processus au maximum. Après quelques prototypes j'arrive avec un script fait en python qui me permet de générer des fichiers csv avec les informations nécessaire à la création d'une fiche sur GCPI.</p>
+            <div class="card mb-2">
+                <div class="card-body">
+                    thoutrique	XXXX	260XXXXXXXX	XPS 13 9370	Dell Laptop	Ethernet:XX-XX-XX-XX-XX-XX,Wireless:XX-XX-XX-XX-XX-XX
+                </div>
+            </div>
+            <h3>Juillet 2021</h3>
+            <p>Avec les fichiers Csv en ma possession il me fallait désormais un moyen de les ajouter automatiquement sur le site. Avec quelques lignes de Javascript j'arrive à lire les fichiers et à en récupérer le contenu. En injectant ses informations dans les différents inputs j'arrive avec un premier prototype fonctionnel.</p>
+            <h3>Aout 2021</h3>
+            <p>Durant le mois d'aout j'ai réécrit une grande partie du code HTML pour passer le site sous le framework bootstrap le rendant compatible pour toutes tailles d'écrans et le modernisant par la même occasion. J'ai également ajouté de nouvelles fonctionnalités comme la possibilité d'entrer des clefs de chiffrement Linux</p>
+            <p>J'en ai également profité à la demande de L'équipe pour créer une page de statistiques afin de voir d'un coup d'oeil l'état du parc informatique.</p>
+            <img src="./images/gcpiafter.png" class="img-fluid rounded w-75" alt="gcpibefore">
+            <img src="./images/gcpistats.png" class="img-fluid rounded w-75 mt-3 mb-2" alt="gcpibefore">
+            <p>Au milieu du mois d'aout nous avons mis ce nouveau site en production, les déclarations de machines se font désormais en quelques secondes et sans risque d'erreurs.</p>
         </article>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
