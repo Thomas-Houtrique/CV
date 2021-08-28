@@ -1,12 +1,16 @@
-$primary: #047bf7;
+$primary: #2a9d8f;
+$bg: #f0f0f3;
+$box_shadow_concave: inset -10px -10px 10px #ffffff70, inset 10px 10px 10px #aeaec020;
+$box_shadow_flat: -10px -10px 30px #fff, 10px 10px 30px #aeaec040;
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
-  background-color: #fff;
+  font-family: "Nunito", sans-serif;
+  background-color: $bg;
+  letter-spacing: 0.5px;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -28,12 +32,11 @@ i {
   background: transparent;
 }
 
-.nav-link, h1 {
-  font-weight: bold;
-}
-
 a {
-  &:link, &:visited, &:hover, &:active {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
     text-decoration: none;
   }
 }
@@ -54,19 +57,19 @@ a {
 }
 
 .reveal-2 {
-  transition-delay: .3s;
+  transition-delay: 0.3s;
 }
 
 .reveal-3 {
-  transition-delay: .6s;
+  transition-delay: 0.6s;
 }
 
 .flip-card {
-  background: #fff;
-  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  background: $bg;
+  box-shadow: $box_shadow_concave;
   height: 190px;
   width: 500px;
-  padding: 15px;
+  padding: 25px;
   border-radius: 10px;
   perspective: 1000px;
 }
@@ -80,7 +83,8 @@ a {
   transform-style: preserve-3d;
 }
 
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   margin: 0 auto;
   position: absolute;
   width: 100%;
@@ -95,7 +99,7 @@ a {
 
 .flip-card-back {
   transform: rotateY(180deg);
-  background-color: #fff;
+  background-color: $bg;
 }
 
 .flip-card-front img {
@@ -105,6 +109,14 @@ a {
 
 .flip-card-back p {
   margin-top: 10px;
+}
+
+.dropdown-menu{
+  background-color: $bg;
+  :hover{
+    background-color: $primary;
+    color: $bg;
+  }
 }
 
 @media only screen and (max-width: 767px) {

@@ -31,7 +31,7 @@ document.getElementById("age").innerHTML = ageInYears;
 //         })
 //     })
 
-const button = document.querySelector(".reverse");
+const button = document.querySelector(".contact");
 const contact_link = document.querySelectorAll(".reveal-icons")
 button.addEventListener("click", function (e) {
     button.classList.add('disapear');

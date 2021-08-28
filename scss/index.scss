@@ -4,22 +4,22 @@
   display: flex;
   text-align: center;
   align-items: center;
-  :hover {
-    transform: translateY(-3px);
-    transition: 0.5s;
+}
+
+i {
+  font-size: 22px;
+}
+
+.projets-cards {
+  h5 {
+    color: #5c5c5c;
+    font-weight: bold;
   }
-}
-
-i{
-  font-size: 25px;
-}
-
-.projets-cards{
-  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  box-shadow: $box_shadow_concave;
+  background-color: $bg;
   border-radius: 15px;
-  padding: 15px;
+  padding: 25px;
   width: 500px;
-  text-align: center;
 }
 
 button:focus {
@@ -29,11 +29,14 @@ button:focus {
 
 p {
   color: #5c5c5c;
-  font-size: 19px;
+  font-size: 20px;
 }
 
 .image {
-  width: 250px;
+  width: 150px;
+  box-shadow: $box_shadow_concave;
+  padding: 10px;
+  border-radius: 50%;
 }
 
 .competences-label {
@@ -46,8 +49,9 @@ p {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.3rem;
   color: #474747;
+  font-weight: bold;
 }
 
 h2 {
@@ -91,12 +95,6 @@ h3 {
   margin-right: 15px;
 }
 
-.reverse {
-  background-color: #fff;
-  border: $primary 3px solid;
-  color: $primary;
-}
-
 img {
   width: 300px;
 }
@@ -125,11 +123,11 @@ img {
   width: 20px;
 }
 
-.formation_table{
-  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+.formation_table {
+  box-shadow: $box_shadow_flat;
   border-radius: 15px;
   padding: 20px;
-  .table{
+  .table {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -137,8 +135,8 @@ img {
 }
 
 .card-competence {
-  background: #ffffff;
-  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  background: $bg;
+  box-shadow: $box_shadow_concave;
   flex: 1 0 30%;
   margin: 15px;
   text-align: center;
@@ -158,7 +156,7 @@ img {
   }
 }
 
-.fas{
+.fas {
   right: 10%;
 }
 
@@ -168,13 +166,13 @@ img {
   margin-bottom: 50px;
 }
 
-.reveal{
+.reveal {
   opacity: 0;
   transform: translateY(30px);
 }
 
-.reveal-icons{
-  i{
+.reveal-icons {
+  i {
     font-size: 0px;
   }
   opacity: 0;
@@ -182,13 +180,13 @@ img {
   transform: translateY(30px);
 }
 
-.disapear{
+.disapear {
   transform: translateY(-30px);
   opacity: 0;
   transition: 1s;
 }
 
-.reveal-visible{
+.reveal-visible {
   opacity: 1;
   transform: translateY(0);
   transition: 1s;
@@ -202,7 +200,7 @@ img {
   .buttons {
     justify-content: center;
   }
-  .svg{
+  .svg {
     width: 100%;
   }
 }
@@ -218,7 +216,7 @@ img {
     display: block;
     height: 0;
     width: 0;
-    border-top: 50px solid #ff6b6c;
+    border-top: 50px solid #e76f51;
     border-right: 29px solid transparent;
     border-left: 21px solid transparent;
   }
@@ -239,18 +237,101 @@ img {
       transform: rotate(xx) translateY(0px);
     }
   }
-  .reveal-2{
-    transition-delay: .3s;
+  .reveal-2 {
+    transition-delay: 0.3s;
   }
-  
-  .reveal-3{
-    transition-delay: .6s;
+
+  .reveal-3 {
+    transition-delay: 0.6s;
   }
 }
 
 @media only screen and (max-width: 991px) {
-  .projets-cards{
+  .projets-cards {
     width: 100%;
     margin-top: 50px;
   }
+}
+
+
+// Button
+
+.c-button {
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  width: 150px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.c-button--gooey {
+  color: $primary;
+  font-size: 1rem;
+  border: 4px solid $primary;
+  position: relative;
+  transition: all 700ms ease;
+  border-radius: 5px;
+  .c-button__blobs {
+    height: 100%;
+    filter: url(#goo);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: -3px;
+    right: -1px;
+    z-index: -1;
+    div {
+      background-color: $primary;
+      width: 34%;
+      height: 100%;
+      border-radius: 100%;
+      position: absolute;
+      transform: scale(1.4) translateY(125%) translateZ(0);
+      transition: all 700ms ease;
+      &:nth-child(1) {
+        left: -5%;
+      }
+      &:nth-child(2) {
+        left: 30%;
+        transition-delay: 60ms;
+      }
+      &:nth-child(3) {
+        left: 66%;
+        transition-delay: 25ms;
+      }
+    }
+  }
+  &:hover {
+    color: $bg;
+    .c-button__blobs {
+      div {
+        transform: scale(1.4) translateY(0) translateZ(0);
+      }
+    }
+  }
+}
+
+.apple{
+  width: 24px;
+}
+
+#first > .first-message{
+  margin-top: 25px;
+  width: 80%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  box-shadow: $box_shadow_flat;
+  border-radius: 25px;
+  padding-left: 15px;
+}
+
+.text{
+  width: max-content;
+  padding: 15px;
 }

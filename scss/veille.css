@@ -3,8 +3,9 @@ html {
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
-  background-color: #fff;
+  font-family: "Nunito", sans-serif;
+  background-color: #f0f0f3;
+  letter-spacing: 0.5px;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -18,16 +19,12 @@ body {
 }
 
 i {
-  color: #047bf7;
+  color: #2a9d8f;
   font-size: 20px;
 }
 
 .navbar-inner {
   background: transparent;
-}
-
-.nav-link, h1 {
-  font-weight: bold;
 }
 
 a:link, a:visited, a:hover, a:active {
@@ -53,22 +50,22 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .reveal-2 {
-  -webkit-transition-delay: .3s;
-          transition-delay: .3s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 
 .reveal-3 {
-  -webkit-transition-delay: .6s;
-          transition-delay: .6s;
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
 }
 
 .flip-card {
-  background: #fff;
-  -webkit-box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
-          box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  background: #f0f0f3;
+  -webkit-box-shadow: inset -10px -10px 10px #ffffff70, inset 10px 10px 10px #aeaec020;
+          box-shadow: inset -10px -10px 10px #ffffff70, inset 10px 10px 10px #aeaec020;
   height: 190px;
   width: 500px;
-  padding: 15px;
+  padding: 25px;
   border-radius: 10px;
   -webkit-perspective: 1000px;
           perspective: 1000px;
@@ -87,7 +84,8 @@ a:link, a:visited, a:hover, a:active {
           transform-style: preserve-3d;
 }
 
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   margin: 0 auto;
   position: absolute;
   width: 100%;
@@ -104,7 +102,7 @@ a:link, a:visited, a:hover, a:active {
 .flip-card-back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
-  background-color: #fff;
+  background-color: #f0f0f3;
 }
 
 .flip-card-front img {
@@ -114,6 +112,15 @@ a:link, a:visited, a:hover, a:active {
 
 .flip-card-back p {
   margin-top: 10px;
+}
+
+.dropdown-menu {
+  background-color: #f0f0f3;
+}
+
+.dropdown-menu :hover {
+  background-color: #2a9d8f;
+  color: #f0f0f3;
 }
 
 @media only screen and (max-width: 767px) {

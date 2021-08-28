@@ -46,6 +46,15 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Veille
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="veille.html">5G</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Situations professionnelles entreprise
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -63,15 +72,6 @@
                         <a class="dropdown-item" href="glpi.html">GLPI</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Veille
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="veille.html">5G</a>
-                    </div>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Analyse</a>
                 </li>
@@ -80,30 +80,50 @@
     </nav>
     <div class="container">
         <div id="first">
-            <div class="row">
-                <div class="col-lg-4">
-                    <img alt="Ma tete" class="image" src="images/test.png" data-toggle="modal"
-                        data-target="#exampleModal" />
-                </div>
-                <div class="col-lg-8">
+            <div class="first-message">
+                <img alt="Ma tete" class="image" src="images/Avatar.svg" data-toggle="modal"
+                    data-target="#exampleModal" />
+                <div class="text">
+                    <p class="m-0">Salut <img src="images/waving.png" alt="" class="apple"> je m'appelle</p>
                     <h1>
                         Houtrique Thomas
                     </h1>
                     <p>
-                        Je m'appelle Thomas j'ai <span id="age"></span> ans et je suis actuellement<br />
-                        etudiant en <span class="blue">BTS SIO</span> spécialité
+                        j'ai <span id="age"></span> ans et je suis actuellement etudiant
+                        en <span class="blue">BTS SIO</span> spécialité
                         <span class="blue">SISR</span>
                     </p>
                     <div class="buttons">
                         <a href="#second"><button class="primary-button project-button">Mon
                                 CV</button></a>
-                        <button class="reverse primary-button">
+                        <a href="#!" class="c-button c-button--gooey contact">
                             Contact
-                        </button>
+                            <div class="c-button__blobs">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </a>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                            style="display: block; height: 0; width: 0;">
+                            <defs>
+                                <filter id="goo">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur">
+                                    </feGaussianBlur>
+                                    <feColorMatrix in="blur" mode="matrix"
+                                        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo">
+                                    </feColorMatrix>
+                                    <feBlend in="SourceGraphic" in2="goo"></feBlend>
+                                </filter>
+                            </defs>
+                        </svg>
                         <a href="https://www.linkedin.com/in/houtriquethomas" class="reveal-icons"><i
                                 class="fab fa-linkedin-in contact"></i></a>
-                        <a href="mailto:thomashoutrique@gmail.com" class="reveal-icons reveal-2"><i class="far fa-envelope contact"></i></a>
-                        <a href="https://github.com/Thomas-Houtrique" class="reveal-icons reveal-3"><i class="fab fa-github contact"></i></a>
+                        <a href="mailto:thomashoutrique@gmail.com" class="reveal-icons reveal-2"><i
+                                class="far fa-envelope contact"></i></a>
+                        <a href="https://github.com/Thomas-Houtrique" class="reveal-icons reveal-3"><i
+                                class="fab fa-github contact"></i></a>
                     </div>
                 </div>
             </div>
@@ -113,7 +133,7 @@
                     <div class="col-xl-6">
                         <div class="projets-cards reveal">
                             <i class="fas fa-server position-absolute"></i>
-                            <p>VLSM</p>
+                            <h5>VLSM</h5>
                             <hr>
                             <p>Maquette utilisant le principe du VLSM sur l'outil packet tracer</p>
                         </div>
@@ -121,7 +141,7 @@
                     <div class="col-xl-6">
                         <div class="projets-cards reveal reveal-2">
                             <i class="fas fa-network-wired position-absolute"></i>
-                            <p>GLPI</p>
+                            <h5>GLPI</h5>
                             <hr>
                             <p>Installation de GLPI et configuration LDAP + FusionInventory</p>
                         </div>
